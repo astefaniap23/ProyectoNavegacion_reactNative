@@ -16,7 +16,7 @@ var altoCaja = 100;
 class VentanaInicio extends React.Component{
   render(){
   return(
-    <ImageBackground source={rutaFondo} style={miEstilo.imagenFondo}>
+    <ImageBackground source={rutaFondo} style={miestilo.imagenFondo}>
         <View style={miestilo.caja01}>
           <Image style={miestilo.logo} source={rutaLogo}>
           </Image>
@@ -31,82 +31,84 @@ class VentanaInicio extends React.Component{
   class VentanaDatos extends React.Component{
     render(){
     return(
-   
-      <ImageBackground source={rutaFondo} style={miestilo.imagenFondo}>
+   <ImageBackground source={rutaFondo} style={miestilo.imagenFondo}>
         <ScrollView>
           <View>
-
-            <View  style= {miestilo2.fila}>
-              <View style={miestilo2.caja1}> </View>
-              <View style={miestilo2.caja2}> </View>
-              <View style={miestilo2.caja3}> </View>
+          <View style={miestilo2.fila}>
+              <View style={miestilo2.caja1}></View>
+              <View style={miestilo2.caja2}></View>
+              <View style={miestilo2.caja3}></View>
             </View>
-            <View  style= {miestilo2.fila}>
-              <View style={miestilo2.caja1}> </View>
-              <View style={miestilo2.caja2}> </View>
-              <View style={miestilo2.caja3}> </View>
+            <View style={miestilo2.fila}>
+              <View style={miestilo2.caja1}></View>
+              <View style={miestilo2.caja2}></View>
+              <View style={miestilo2.caja3}></View>
             </View>
-            <View  style= {miestilo2.fila}>
-              <View style={miestilo2.caja1}> </View>
-              <View style={miestilo2.caja2}> </View>
-              <View style={miestilo2.caja3}> </View>
+            <View style={miestilo2.fila}>
+              <View style={miestilo2.caja1}></View>
+              <View style={miestilo2.caja2}></View>
+              <View style={miestilo2.caja3}></View>
             </View>
-            <View  style= {miestilo2.fila}>
-              <View style={miestilo2.caja1}> </View>
-              <View style={miestilo2.caja2}> </View>
-              <View style={miestilo2.caja3}> </View>
+            <View style={miestilo2.fila}>
+              <View style={miestilo2.caja1}></View>
+              <View style={miestilo2.caja2}></View>
+              <View style={miestilo2.caja3}></View>
             </View>
-
-            <View  style= {miestilo2.fila}>
-              <View style={miestilo2.caja1}> </View>
-              <View style={miestilo2.caja2}> </View>
-              <View style={miestilo2.caja3}> </View>
+            <View style={miestilo2.fila}>
+              <View style={miestilo2.caja1}></View>
+              <View style={miestilo2.caja2}></View>
+              <View style={miestilo2.caja3}></View>
             </View>
-            <View  style= {miestilo2.fila}>
-              <View style={miestilo2.caja1}> </View>
-              <View style={miestilo2.caja2}> </View>
-              <View style={miestilo2.caja3}> </View>
+            <View style={miestilo2.fila}>
+              <View style={miestilo2.caja1}></View>
+              <View style={miestilo2.caja2}></View>
+              <View style={miestilo2.caja3}></View>
             </View>
-            <View  style= {miestilo2.fila}>
-              <View style={miestilo2.caja1}> </View>
-              <View style={miestilo2.caja2}> </View>
-              <View style={miestilo2.caja3}> </View>
+            <View style={miestilo2.fila}>
+              <View style={miestilo2.caja1}></View>
+              <View style={miestilo2.caja2}></View>
+              <View style={miestilo2.caja3}></View>
             </View>
-            <View  style= {miestilo2.fila}>
-              <View style={miestilo2.caja1}> </View>
-              <View style={miestilo2.caja2}> </View>
-              <View style={miestilo2.caja3}> </View>
+            <View style={miestilo2.fila}>
+              <View style={miestilo2.caja1}></View>
+              <View style={miestilo2.caja2}></View>
+              <View style={miestilo2.caja3}></View>
             </View>
-
-      
-            <View>
-              <Button title= "Ir a datos" onPress={()=> this.props.navigation.push('Inicio')} />
+           <View>
+              <Button title= "Ir a Circulo" onPress={()=> this.props.navigation.push('Circulo')} />
             </View>
-        </View>
-
-        </ScrollView>
-
-      </ImageBackground>
-      
-      );
+         </View>
+       </ScrollView>
+  </ImageBackground>);
     }
   }
+
+  class VentanaCirculo extends React.Component{
+    render(){
+    return(
+      <ImageBackground source={rutaFondo} style={miestilo.imagenFondo}>
+          <View style={miestilo3.circulo}></View>
+        <Button title= "Ir a Inicio" onPress={()=> this.props.navigation.push('Inicio')} />
+      </ImageBackground>
+      );
+      }
+    }
   
   //——————————
   
   const navegar =  createStackNavigator(
   {
     Inicio: VentanaInicio,
-    Datos: VentanaDatos
+    Datos: VentanaDatos,
+    Circulo: VentanaCirculo
   },{
     initialRouteName: 'Inicio',
   }
-  );
+  ); 
   
   //—llama a la clase
-  const AppContainer = createAppContainer(
-    navegar
-  );
+  const AppContainer = createAppContainer( navegar);
+
   //——clase principal
   export default class App extends React.Component{
   render () {
@@ -157,7 +159,7 @@ class VentanaInicio extends React.Component{
     caja1:{
       flex:1,
       height:100,
-      backgroundColor:"orange",
+      backgroundColor:"blue",
       marginRight:20,
       marginLeft:20
     },
@@ -174,10 +176,19 @@ class VentanaInicio extends React.Component{
       backgroundColor:"yellow",
       marginRight:20,
       marginLeft:20
-    }
-    
+    }   
 });
 
+const miestilo3 = StyleSheet.create({
+ circulo: {
+    width: 400,
+    justifyContent: 'center',
+    height: 400,
+    borderRadius: 400/2,
+    backgroundColor:"yellow"
+ }
+ 
+});
 
 /*export default function App() {
   return (
